@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>mitomlango｜AIを活用した課題解決支援</title>
+<meta name="description" content="AIで、あなたの会社だけの仕組みを小さく作って、育てる。中小企業向けに、AI活用のご相談・ツール開発・研修を行います。初回相談60分無料。">
+<meta property="og:title" content="mitomlango｜AIを活用した課題解決支援">
+<meta property="og:description" content="AIで、あなたの会社だけの仕組みを小さく作って、育てる。初回相談60分無料。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mitomlango.com/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%2216%22%20fill%3D%22%232A9D8F%22%2F%3E%3Cg%20transform%3D%22translate(7%207)%20scale(0.035)%22%20fill%3D%22%23fff%22%3E%3Cpath%20d%3D%22M512%2032c0%20113.6-84.6%20207.5-194.2%20222c-7.1-53.4-30.6-101.6-65.3-139.3C290.8%2046.3%20364%200%20448%200l32%200c17.7%200%2032%2014.3%2032%2032zM0%2096C0%2078.3%2014.3%2064%2032%2064l32%200c123.7%200%20224%20100.3%20224%20224l0%2032%200%20160c0%2017.7-14.3%2032-32%2032s-32-14.3-32-32l0-160C100.3%20320%200%20219.7%200%2096z%22%3E%3C%2Fpath%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+<style>
+:root{--navy:#16324F;--ink:#1E2A36;--teal:#2A9D8F;--orange:#F28C28;--gray:#5C6B7A;--mist:#EEF3F6;--mint:#D9EEEA;--peach:#FDE8D3;--line:#D5DEE5}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",Meiryo,sans-serif;color:var(--ink);background:#fff;line-height:1.8;font-size:16px}
+a{color:var(--teal)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.top{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.95);backdrop-filter:blur(6px);border-bottom:1px solid var(--mist)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;color:var(--navy);text-decoration:none}
+.logo .dot{width:34px;height:34px;border-radius:50%;background:var(--teal);display:grid;place-items:center}
+.logo .dot svg{width:18px;height:18px;fill:#fff}
+nav a{color:var(--navy);text-decoration:none;margin-left:20px;font-size:14px}
+nav a.btn{margin-left:24px}
+.btn{display:inline-block;background:var(--orange);color:#fff;text-decoration:none;font-weight:700;padding:12px 26px;border-radius:999px;transition:opacity .2s}
+.btn:hover{opacity:.85}
+.btn.small{padding:8px 18px;font-size:14px;color:#fff}
+.hero{background:var(--navy);color:#fff;padding:96px 0 88px}
+.hero h1{font-size:clamp(30px,5vw,48px);line-height:1.35;margin:0 0 20px}
+.hero .sub{color:var(--orange);font-size:clamp(17px,2.4vw,21px);margin:0 0 36px}
+.hero p.lead{max-width:640px;color:#E6EDF2;margin:0 0 36px}
+section{padding:80px 0}
+section.alt{background:var(--mist)}
+h2{font-size:clamp(24px,3.4vw,32px);color:var(--navy);margin:0 0 8px;line-height:1.4}
+.lead2{color:var(--gray);margin:0 0 40px}
+.grid{display:grid;gap:20px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.card{background:#fff;border-radius:14px;padding:24px;display:flex;gap:16px;align-items:flex-start}
+section:not(.alt) .card{background:var(--mist)}
+.card h3{margin:2px 0 6px;font-size:18px;color:var(--navy)}
+.card p{margin:0;font-size:15px}
+.icon{flex:none;width:48px;height:48px;border-radius:50%;background:var(--navy);display:grid;place-items:center}
+.icon svg{width:22px;height:22px;fill:#fff}
+.teal .icon{background:var(--teal)}
+.compare{display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:stretch}
+.box{border-radius:14px;padding:28px}
+.box h3{margin:0 0 12px;font-size:19px}
+.box ul{margin:0;padding-left:20px}
+.box.before{background:var(--mist)}.box.before h3{color:var(--gray)}
+.box.after{background:var(--mint)}.box.after h3{color:var(--teal)}
+.arrow{display:grid;place-items:center;color:var(--orange);font-size:34px;font-weight:700}
+.banner{margin-top:24px;background:var(--navy);color:#fff;border-radius:14px;padding:20px;text-align:center;font-weight:700;font-size:18px}
+.walls{display:grid;grid-template-columns:1fr auto 1fr;gap:14px 20px;align-items:center}
+.walls .w,.walls .s{border-radius:12px;padding:16px 20px}
+.walls .w{background:#fff}.walls .s{background:var(--mint)}
+.walls .s b{color:var(--teal);margin-right:10px}
+.walls .ar{color:var(--orange);font-size:24px;font-weight:700}
+.tag{margin-top:32px;text-align:center;color:var(--orange);font-weight:700;font-size:22px;font-style:italic}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.step{background:var(--mist);border-radius:14px;padding:26px;display:flex;flex-direction:column}
+.step.first{background:var(--peach)}
+.step .head{display:flex;gap:14px;align-items:center;margin-bottom:12px}
+.step .icon{width:52px;height:52px}
+.step.first .icon{background:var(--orange)}
+.step small{display:block;color:var(--gray);font-weight:700;font-size:12px}
+.step h3{margin:0;font-size:21px;color:var(--navy)}
+.step .meta{color:var(--teal);font-weight:700;font-size:15px;margin:0 0 6px}
+.step p{margin:0 0 16px;font-size:15px;flex:1}
+.step .price{font-size:28px;font-weight:700;color:var(--navy)}
+.step.first .price{color:var(--orange)}
+.note{color:var(--gray);font-size:13px;margin-top:14px}
+.voice{display:grid;grid-template-columns:1fr 1.5fr;gap:28px}
+.voice .why{background:#fff;border-radius:14px;padding:26px}
+.voice .why h3{margin:0 0 10px;color:var(--gray)}
+.voice .why ul{margin:0;padding-left:20px;list-style:disc}
+.voice .why li{margin:4px 0}
+.voice ol{list-style:none;margin:0;padding:0;display:grid;gap:18px}
+.voice ol li{display:flex;gap:16px;align-items:flex-start}
+.voice ol li .icon{background:var(--teal)}
+.voice li h3{margin:0;font-size:17px;color:var(--navy)}
+.voice li p{margin:0;font-size:15px}
+.cycle{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;counter-reset:c;list-style:none;padding:0;margin:0}
+.cycle li{background:var(--mist);border-radius:12px;padding:18px;font-size:14px;position:relative}
+.cycle li::before{counter-increment:c;content:counter(c);display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--navy);color:#fff;font-weight:700;margin-bottom:10px}
+.roles{margin-top:24px}
+.roles .card{background:var(--mint)!important}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden}
+th,td{padding:12px 16px;border-bottom:1px solid var(--line);text-align:left;font-size:15px;vertical-align:top}
+th{background:var(--navy);color:#fff}
+tr.hl td{color:var(--orange);font-weight:700}
+td:last-child{white-space:nowrap}
+.flow{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;list-style:none;padding:0;margin:0;counter-reset:f}
+.flow li{text-align:center}
+.flow li::before{counter-increment:f;content:counter(f);display:block;background:var(--navy);color:#fff;font-weight:700;font-size:20px;padding:10px 0;clip-path:polygon(0 0,85% 0,100% 50%,85% 100%,0 100%,15% 50%);margin-bottom:10px}
+.flow li:nth-child(2)::before{background:var(--orange)}
+.flow b{display:block;color:var(--navy)}
+.flow span{font-size:13px;color:var(--gray)}
+.profile{display:grid;grid-template-columns:280px 1fr;gap:32px;align-items:start}
+.pcard{background:var(--navy);color:#fff;border-radius:16px;padding:32px;text-align:center}
+.pcard .icon{width:110px;height:110px;margin:0 auto 18px;background:var(--teal)}
+.pcard .icon svg{width:52px;height:52px}
+.pcard h3{margin:0;font-size:26px}
+.pcard .kana{color:#C9D4DD;font-size:13px}
+.pcard .role{color:var(--orange);font-weight:700;margin-top:10px}
+.profile h3.t{color:var(--navy);margin:0 0 10px;font-size:20px}
+.profile ul{margin:0 0 24px;padding-left:20px}
+.cta{background:var(--navy);color:#fff;text-align:center;padding:88px 0}
+.cta h2{color:#fff}
+.cta p{color:#E6EDF2;margin:0 0 32px}
+.privacy{font-size:13px;color:var(--gray)}
+.privacy h3{font-size:15px;color:var(--navy)}
+footer{padding:28px 0;font-size:13px;color:var(--gray);border-top:1px solid var(--mist)}
+@media (max-width:860px){
+  nav a:not(.btn){display:none}
+  .g3,.g2,.steps,.voice,.profile{grid-template-columns:1fr}
+  .compare,.walls{grid-template-columns:1fr}
+  .arrow,.walls .ar{transform:rotate(90deg);justify-self:center}
+  .cycle{grid-template-columns:1fr 1fr}
+  .flow{grid-template-columns:repeat(2,1fr)}
+  thead{display:none}
+  table,tbody,tr,td{display:block;width:100%}
+  tr{border-bottom:1px solid var(--line);padding:12px 16px}
+  td{border:0;padding:2px 0}
+  td:first-child{font-weight:700;color:var(--navy)}
+  td:nth-child(2){font-size:14px;color:var(--gray)}
+  td:last-child{white-space:normal;font-weight:700}
+  tr.hl{background:var(--peach)}
+  section{padding:56px 0}
+  .hero{padding:64px 0}
+}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="logo" href="#"><span class="dot"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M512 32c0 113.6-84.6 207.5-194.2 222c-7.1-53.4-30.6-101.6-65.3-139.3C290.8 46.3 364 0 448 0l32 0c17.7 0 32 14.3 32 32zM0 96C0 78.3 14.3 64 32 64l32 0c123.7 0 224 100.3 224 224l0 32 0 160c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-160C100.3 320 0 219.7 0 96z"></path></svg></span>mitomlango</a>
+  <nav><a href="#approach">考え方</a><a href="#start">始め方</a><a href="#price">料金</a><a class="btn small" href="https://docs.google.com/forms/d/e/1FAIpQLSc8Q5MJRWNwoqRIX07MnXLYQ_ErcGJ1dc-YIIZ4Czk5FRrzvA/viewform" target="_blank" rel="noopener">無料相談</a></nav>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <h1>AIで、あなたの会社だけの仕組みを<br>小さく作って、育てる。</h1>
+  <p class="sub">AIを活用した課題解決支援（ご相談・開発・研修）</p>
+  <p class="lead">紙・手入力・職人技。大きなシステムを入れるほどではないけれど、毎日の手間は確実にある。そんな中小企業の現場に、AIで「自社専用の仕組み」を小さく作り、使いながら育てていきます。</p>
+  <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSc8Q5MJRWNwoqRIX07MnXLYQ_ErcGJ1dc-YIIZ4Czk5FRrzvA/viewform" target="_blank" rel="noopener">無料相談を申し込む（60分・オンライン）</a>
+</div></section>
+
+<section><div class="wrap">
+  <h2>こんなお困りごとはありませんか</h2>
+  <p class="lead2">大きなシステムを入れるほどではない。でも、毎日の手間は確実にある。</p>
+  <div class="grid g3"><div class="card "><span class="icon"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M0 64C0 28.7 28.7 0 64 0L224 0l0 128c0 17.7 14.3 32 32 32l128 0 0 125.7-86.8 86.8c-10.3 10.3-17.5 23.1-21 37.2l-18.7 74.9c-2.3 9.2-1.8 18.8 1.3 27.5L64 512c-35.3 0-64-28.7-64-64L0 64zm384 64l-128 0L256 0 384 128zM549.8 235.7l14.4 14.4c15.6 15.6 15.6 40.9 0 56.6l-29.4 29.4-71-71 29.4-29.4c15.6-15.6 40.9-15.6 56.6 0zM311.9 417L441.1 287.8l71 71L382.9 487.9c-4.1 4.1-9.2 7-14.9 8.4l-60.1 15c-5.5 1.4-11.2-.2-15.2-4.2s-5.6-9.7-4.2-15.2l15-60.1c1.4-5.6 4.3-10.8 8.4-14.9z"></path></svg></span><div><h3>紙・手書きが中心</h3><p>記録や伝票が紙のまま。探すのも集計するのも手作業。</p></div></div><div class="card "><span class="icon"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M64 64C28.7 64 0 92.7 0 128L0 384c0 35.3 28.7 64 64 64l448 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64L64 64zm16 64l32 0c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32c0-8.8 7.2-16 16-16zM64 240c0-8.8 7.2-16 16-16l32 0c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32zm16 80l32 0c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32c0-8.8 7.2-16 16-16zm80-176c0-8.8 7.2-16 16-16l32 0c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32zm16 80l32 0c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32c0-8.8 7.2-16 16-16zM160 336c0-8.8 7.2-16 16-16l224 0c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16l-224 0c-8.8 0-16-7.2-16-16l0-32zM272 128l32 0c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32c0-8.8 7.2-16 16-16zM256 240c0-8.8 7.2-16 16-16l32 0c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32zM368 128l32 0c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32c0-8.8 7.2-16 16-16zM352 240c0-8.8 7.2-16 16-16l32 0c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32zM464 128l32 0c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32c0-8.8 7.2-16 16-16zM448 240c0-8.8 7.2-16 16-16l32 0c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32zm16 80l32 0c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32c0-8.8 7.2-16 16-16z"></path></svg></span><div><h3>同じ数字を何度も入力</h3><p>手書きの表をExcelへ、Excelを別のシステムへ転記。</p></div></div><div class="card "><span class="icon"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M88.7 223.8L0 375.8 0 96C0 60.7 28.7 32 64 32l117.5 0c17 0 33.3 6.7 45.3 18.7l26.5 26.5c12 12 28.3 18.7 45.3 18.7L416 96c35.3 0 64 28.7 64 64l0 32-336 0c-22.8 0-43.8 12.1-55.3 31.8zm27.6 16.1C122.1 230 132.6 224 144 224l400 0c11.5 0 22 6.1 27.7 16.1s5.7 22.2-.1 32.1l-112 192C453.9 474 443.4 480 432 480L32 480c-11.5 0-22-6.1-27.7-16.1s-5.7-22.2 .1-32.1l112-192z"></path></svg></span><div><h3>ファイルの山</h3><p>毎日の記録をファイリング。必要なときに見つからない。</p></div></div><div class="card "><span class="icon"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M219.3 .5c3.1-.6 6.3-.6 9.4 0l200 40C439.9 42.7 448 52.6 448 64s-8.1 21.3-19.3 23.5L352 102.9l0 57.1c0 70.7-57.3 128-128 128s-128-57.3-128-128l0-57.1L48 93.3l0 65.1 15.7 78.4c.9 4.7-.3 9.6-3.3 13.3s-7.6 5.9-12.4 5.9l-32 0c-4.8 0-9.3-2.1-12.4-5.9s-4.3-8.6-3.3-13.3L16 158.4l0-71.8C6.5 83.3 0 74.3 0 64C0 52.6 8.1 42.7 19.3 40.5l200-40zM111.9 327.7c10.5-3.4 21.8 .4 29.4 8.5l71 75.5c6.3 6.7 17 6.7 23.3 0l71-75.5c7.6-8.1 18.9-11.9 29.4-8.5C401 348.6 448 409.4 448 481.3c0 17-13.8 30.7-30.7 30.7L30.7 512C13.8 512 0 498.2 0 481.3c0-71.9 47-132.7 111.9-153.6z"></path></svg></span><div><h3>職人技が伝わらない</h3><p>「見て覚えろ」で、ベテランのコツが残らない。</p></div></div><div class="card "><span class="icon"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L440.6 320l178.1 0c11.8 0 21.3-9.6 21.3-21.3C640 239.8 592.2 192 533.3 192l-42.7 0c-15.9 0-31 3.5-44.6 9.7c1.3 7.2 1.9 14.7 1.9 22.3c0 30.2-10.5 58-28 79.9l-25.2-19.7C408.1 267.7 416 246.8 416 224c0-53-43-96-96-96c-31.1 0-58.7 14.8-76.3 37.7l-40.6-31.8c13-14.2 20.9-33.1 20.9-53.9c0-44.2-35.8-80-80-80C116.3 0 91.9 14.1 77.5 35.5L38.8 5.1zM106.7 192C47.8 192 0 239.8 0 298.7C0 310.4 9.6 320 21.3 320l213.3 0c.2 0 .4 0 .7 0c-20.6-18.2-35.2-42.8-40.8-70.8L121.8 192l-15.2 0zM261.3 352C187.7 352 128 411.7 128 485.3c0 14.7 11.9 26.7 26.7 26.7l330.7 0c10.5 0 19.5-6 23.9-14.8L324.9 352l-63.6 0zM512 160A80 80 0 1 0 512 0a80 80 0 1 0 0 160z"></path></svg></span><div><h3>人手不足・高齢化</h3><p>人が減っても、仕事の量は変わらない。</p></div></div><div class="card "><span class="icon"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M160 64c0-35.3 28.7-64 64-64L576 0c35.3 0 64 28.7 64 64l0 288c0 35.3-28.7 64-64 64l-239.2 0c-11.8-25.5-29.9-47.5-52.4-64l99.6 0 0-32c0-17.7 14.3-32 32-32l64 0c17.7 0 32 14.3 32 32l0 32 64 0 0-288L224 64l0 49.1C205.2 102.2 183.3 96 160 96l0-32zm0 64a96 96 0 1 1 0 192 96 96 0 1 1 0-192zM133.3 352l53.3 0C260.3 352 320 411.7 320 485.3c0 14.7-11.9 26.7-26.7 26.7L26.7 512C11.9 512 0 500.1 0 485.3C0 411.7 59.7 352 133.3 352z"></path></svg></span><div><h3>新人教育が重い</h3><p>短期アルバイトや外国人スタッフへの説明に時間がかかる。</p></div></div></div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <h2>AIで「試すコスト」が激変しました</h2>
+  <p class="lead2">これまでは、大きく作って長く使う前提。いまは、小さく作ってすぐ直せます。</p>
+  <div class="compare">
+    <div class="box before"><h3>これまで（生成AI以前）</h3><ul>
+      <li>書類を決まった形式にそろえ直してからシステム化</li><li>システム会社に外注。数百万円・数か月</li><li>作った後の変更がしにくく、ベンダー任せ</li><li>「みんなに共通」の大きな仕組みしか割に合わない</li></ul></div>
+    <div class="arrow">→</div>
+    <div class="box after"><h3>いま（Claudeなどの生成AI）</h3><ul>
+      <li>書類はそのまま撮影。文字も表もまとめて読み取れる</li><li>AIと一緒に作るので、月数千円＋AI利用料から動かせる</li><li>現場の声を数日で反映。使いながら直せる</li><li>1社・1つの現場のための仕組みでも割に合う</li></ul></div>
+  </div>
+  <div class="banner">一社一社に合わせた「自社専用の仕組み」を、小さく作れる時代になりました。</div>
+</div></section>
+
+<section id="approach"><div class="wrap">
+  <h2>mitomlangoの考え方：まずは1つから</h2>
+  <p class="lead2">一気に理想の形を入れると、現場は止まります。小さな成功体験で「慣れてもらう」ことを大切にしています。</p>
+  <div class="walls">
+    <div class="w">AIへのアレルギー（よく分からない・不安）</div><div class="ar">→</div><div class="s"><b>STEP 1</b>自分に直結する「これいいな」を小さく体験してもらう</div>
+    <div class="w">変わりたくない（今のやり方で困っていない）</div><div class="ar">→</div><div class="s"><b>STEP 2</b>成功事例を1つずつ積み上げる</div>
+    <div class="w">一気に理想形を入れると抵抗される</div><div class="ar">→</div><div class="s"><b>STEP 3</b>抵抗感がじわじわ薄れ、現場に浸透する</div>
+  </div>
+  <p class="tag">スモールスタートで、人に「慣れてもらう」。</p>
+</div></section>
+
+<section class="alt" id="start"><div class="wrap">
+  <h2>始め方：困りごとを1つ、小さく作って試す</h2>
+  <p class="lead2">効果を実感してから、次に進むかどうかを決められます。</p>
+  <div class="steps"><div class="step first"><div class="head"><span class="icon"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M208 352c114.9 0 208-78.8 208-176S322.9 0 208 0S0 78.8 0 176c0 38.6 14.7 74.3 39.6 103.4c-3.5 9.4-8.7 17.7-14.2 24.7c-4.8 6.2-9.7 11-13.3 14.3c-1.8 1.6-3.3 2.9-4.3 3.7c-.5 .4-.9 .7-1.1 .8l-.2 .2s0 0 0 0s0 0 0 0C1 327.2-1.4 334.4 .8 340.9S9.1 352 16 352c21.8 0 43.8-5.6 62.1-12.5c9.2-3.5 17.8-7.4 25.2-11.4C134.1 343.3 169.8 352 208 352zM448 176c0 112.3-99.1 196.9-216.5 207C255.8 457.4 336.4 512 432 512c38.2 0 73.9-8.7 104.7-23.9c7.5 4 16 7.9 25.2 11.4c18.3 6.9 40.3 12.5 62.1 12.5c6.9 0 13.1-4.5 15.2-11.1c2.1-6.6-.2-13.8-5.8-17.9c0 0 0 0 0 0s0 0 0 0l-.2-.2c-.2-.2-.6-.4-1.1-.8c-1-.8-2.5-2-4.3-3.7c-3.6-3.3-8.5-8.1-13.3-14.3c-5.5-7-10.7-15.4-14.2-24.7c24.9-29 39.6-64.7 39.6-103.4c0-92.8-84.9-168.9-192.6-175.5c.4 5.1 .6 10.3 .6 15.5z"></path></svg></span><div><small>STEP 1</small><h3>無料相談</h3></div></div><p class="meta">60分・オンライン</p><p>業務の流れをうかがい、AIで変えられそうな困りごとを1つにしぼります。</p><div class="price">0円</div></div><div class="step"><div class="head"><span class="icon"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M288 0L160 0 128 0C110.3 0 96 14.3 96 32s14.3 32 32 32l0 132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6C0 480.9 31.1 512 69.4 512l309.2 0c38.3 0 69.4-31.1 69.4-69.4c0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5L320 64c17.7 0 32-14.3 32-32s-14.3-32-32-32L288 0zM192 196.8L192 64l64 0 0 132.8c0 23.7 6.6 46.9 19 67.1L309.5 320l-171 0L173 263.9c12.4-20.2 19-43.4 19-67.1z"></path></svg></span><div><small>STEP 2</small><h3>お試し開発</h3></div></div><p class="meta">約1か月・困りごと1つ</p><p>その1つを小さく作り、現場で使ってみて効果を確かめます。</p><div class="price">5万円〜</div></div><div class="step"><div class="head"><span class="icon"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M512 32c0 113.6-84.6 207.5-194.2 222c-7.1-53.4-30.6-101.6-65.3-139.3C290.8 46.3 364 0 448 0l32 0c17.7 0 32 14.3 32 32zM0 96C0 78.3 14.3 64 32 64l32 0c123.7 0 224 100.3 224 224l0 32 0 160c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-160C100.3 320 0 219.7 0 96z"></path></svg></span><div><small>STEP 3</small><h3>本番・月額伴走</h3></div></div><p class="meta">毎月の改善を一緒に</p><p>効いたものを本番に。現場の声を受けて機能を足し、育てていきます。</p><div class="price">8万円／月〜</div></div></div>
+  <p class="note">金額は税抜・目安です。お試しの範囲は無料相談で一緒に決め、お見積りします。</p>
+</div></section>
+
+<section><div class="wrap">
+  <h2>こんなことができます</h2>
+  <p class="lead2">まずはこの中の「1つ」から。お客さまの現場に合わせて作ります。</p>
+  <div class="grid g2 teal"><div class="card teal"><span class="icon"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0L362.9 64.8C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"></path></svg></span><div><h3>写真でデータ化</h3><p>手書きの帳票や記録を撮るだけで読み取り、表に自動で転記します。</p></div></div><div class="card teal"><span class="icon"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M0 64C0 28.7 28.7 0 64 0L384 0c35.3 0 64 28.7 64 64l0 384c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 64zM256 448a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zM384 64L64 64l0 320 320 0 0-320z"></path></svg></span><div><h3>かんたん入力アプリ</h3><p>紙の記録をタブレット・スマホ入力に。あとから一瞬で検索できます。</p></div></div><div class="card teal"><span class="icon"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 384 512" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M64 0C28.7 0 0 28.7 0 64L0 448c0 35.3 28.7 64 64 64l256 0c35.3 0 64-28.7 64-64l0-288-128 0c-17.7 0-32-14.3-32-32L224 0 64 0zM256 0l0 128 128 0L256 0zM64 80c0-8.8 7.2-16 16-16l64 0c8.8 0 16 7.2 16 16s-7.2 16-16 16L80 96c-8.8 0-16-7.2-16-16zm0 64c0-8.8 7.2-16 16-16l64 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-64 0c-8.8 0-16-7.2-16-16zm128 72c8.8 0 16 7.2 16 16l0 17.3c8.5 1.2 16.7 3.1 24.1 5.1c8.5 2.3 13.6 11 11.3 19.6s-11 13.6-19.6 11.3c-11.1-3-22-5.2-32.1-5.3c-8.4-.1-17.4 1.8-23.6 5.5c-5.7 3.4-8.1 7.3-8.1 12.8c0 3.7 1.3 6.5 7.3 10.1c6.9 4.1 16.6 7.1 29.2 10.9l.5 .1s0 0 0 0s0 0 0 0c11.3 3.4 25.3 7.6 36.3 14.6c12.1 7.6 22.4 19.7 22.7 38.2c.3 19.3-9.6 33.3-22.9 41.6c-7.7 4.8-16.4 7.6-25.1 9.1l0 17.1c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-17.8c-11.2-2.1-21.7-5.7-30.9-8.9c0 0 0 0 0 0c-2.1-.7-4.2-1.4-6.2-2.1c-8.4-2.8-12.9-11.9-10.1-20.2s11.9-12.9 20.2-10.1c2.5 .8 4.8 1.6 7.1 2.4c0 0 0 0 0 0s0 0 0 0s0 0 0 0c13.6 4.6 24.6 8.4 36.3 8.7c9.1 .3 17.9-1.7 23.7-5.3c5.1-3.2 7.9-7.3 7.8-14c-.1-4.6-1.8-7.8-7.7-11.6c-6.8-4.3-16.5-7.4-29-11.2l-1.6-.5s0 0 0 0c-11-3.3-24.3-7.3-34.8-13.7c-12-7.2-22.6-18.9-22.7-37.3c-.1-19.4 10.8-32.8 23.8-40.5c7.5-4.4 15.8-7.2 24.1-8.7l0-17.3c0-8.8 7.2-16 16-16z"></path></svg></span><div><h3>請求書づくりの自動化</h3><p>スプレッドシートから請求書を作り、PDFでメール送付まで。</p></div></div><div class="card teal"><span class="icon"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M0 128C0 92.7 28.7 64 64 64l256 0c35.3 0 64 28.7 64 64l0 256c0 35.3-28.7 64-64 64L64 448c-35.3 0-64-28.7-64-64L0 128zM559.1 99.8c10.4 5.6 16.9 16.4 16.9 28.2l0 256c0 11.8-6.5 22.6-16.9 28.2s-23 5-32.9-1.6l-96-64L416 337.1l0-17.1 0-128 0-17.1 14.2-9.5 96-64c9.8-6.5 22.4-7.2 32.9-1.6z"></path></svg></span><div><h3>動画マニュアル</h3><p>作業を短い動画に。新人や短期スタッフも、字を読まずに分かります。</p></div></div><div class="card teal"><span class="icon"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M320 0c17.7 0 32 14.3 32 32l0 64 120 0c39.8 0 72 32.2 72 72l0 272c0 39.8-32.2 72-72 72l-304 0c-39.8 0-72-32.2-72-72l0-272c0-39.8 32.2-72 72-72l120 0 0-64c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16l32 0c8.8 0 16-7.2 16-16s-7.2-16-16-16l-32 0zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16l32 0c8.8 0 16-7.2 16-16s-7.2-16-16-16l-32 0zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16l32 0c8.8 0 16-7.2 16-16s-7.2-16-16-16l-32 0zM264 256a40 40 0 1 0 -80 0 40 40 0 1 0 80 0zm152 40a40 40 0 1 0 0-80 40 40 0 1 0 0 80zM48 224l16 0 0 192-16 0c-26.5 0-48-21.5-48-48l0-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48l0 96c0 26.5-21.5 48-48 48l-16 0 0-192 16 0z"></path></svg></span><div><h3>社内の質問にAIが回答</h3><p>マニュアルや規程をAIに覚えさせ、聞けばすぐ答えが返ります。</p></div></div><div class="card teal"><span class="icon"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M192 96a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm-8 384l0-128 16 0 0 128c0 17.7 14.3 32 32 32s32-14.3 32-32l0-288 56 0 64 0 16 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-16 0 0-64 192 0 0 192-192 0 0-32-64 0 0 48c0 26.5 21.5 48 48 48l224 0c26.5 0 48-21.5 48-48l0-224c0-26.5-21.5-48-48-48L368 0c-26.5 0-48 21.5-48 48l0 80-76.9 0-65.9 0c-33.7 0-64.9 17.7-82.3 46.6l-58.3 97c-9.1 15.1-4.2 34.8 10.9 43.9s34.8 4.2 43.9-10.9L120 256.9 120 480c0 17.7 14.3 32 32 32s32-14.3 32-32z"></path></svg></span><div><h3>AI活用研修</h3><p>生成AIの基本から業務での使い方、社内ルールづくりまで。</p></div></div></div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <h2>「課題は？」と聞かずに、声を集める</h2>
+  <p class="lead2">何を作るかの前に、聞き方を変えます。本当に効くテーマは、日々の声の中にあります。</p>
+  <div class="voice">
+    <div class="why"><h3>「課題はありますか？」では出てこない理由</h3><ul>
+      <li>今のやり方で、うまくできているという自負がある</li><li>自動化で仕事を奪われるのではという不安がある</li><li>何を答えればいいか分からない</li></ul></div>
+    <ol>
+      <li><span class="icon"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 384 512" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M192 0C139 0 96 43 96 96l0 160c0 53 43 96 96 96s96-43 96-96l0-160c0-53-43-96-96-96zM64 216c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 40c0 89.1 66.2 162.7 152 174.4l0 33.6-48 0c-13.3 0-24 10.7-24 24s10.7 24 24 24l72 0 72 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-48 0 0-33.6c85.8-11.7 152-85.3 152-174.4l0-40c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 40c0 70.7-57.3 128-128 128s-128-57.3-128-128l0-40z"></path></svg></span><div><h3>1日5分、声で残す</h3><p>「困ったこと・良かったこと」をスマホに話すだけ。</p></div></li>
+      <li><span class="icon"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 384 512" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M64 0C28.7 0 0 28.7 0 64L0 448c0 35.3 28.7 64 64 64l256 0c35.3 0 64-28.7 64-64l0-288-128 0c-17.7 0-32-14.3-32-32L224 0 64 0zM256 0l0 128 128 0L256 0zM112 256l160 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-160 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64l160 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-160 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64l160 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-160 0c-8.8 0-16-7.2-16-16s7.2-16 16-16z"></path></svg></span><div><h3>文字に起こす</h3><p>AIが自動で文字にします。</p></div></li>
+      <li><span class="icon"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zm-312 8l0 64c0 13.3 10.7 24 24 24s24-10.7 24-24l0-64c0-13.3-10.7-24-24-24s-24 10.7-24 24zm80-96l0 160c0 13.3 10.7 24 24 24s24-10.7 24-24l0-160c0-13.3-10.7-24-24-24s-24 10.7-24 24zm80 64l0 96c0 13.3 10.7 24 24 24s24-10.7 24-24l0-96c0-13.3-10.7-24-24-24s-24 10.7-24 24z"></path></svg></span><div><h3>AIが分析する</h3><p>たくさんの声から、くり返し出てくるテーマを見つけます。</p></div></li>
+      <li><span class="icon"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M152.1 38.2c9.9 8.9 10.7 24 1.8 33.9l-72 80c-4.4 4.9-10.6 7.8-17.2 7.9s-12.9-2.4-17.6-7L7 113C-2.3 103.6-2.3 88.4 7 79s24.6-9.4 33.9 0l22.1 22.1 55.1-61.2c8.9-9.9 24-10.7 33.9-1.8zm0 160c9.9 8.9 10.7 24 1.8 33.9l-72 80c-4.4 4.9-10.6 7.8-17.2 7.9s-12.9-2.4-17.6-7L7 273c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l22.1 22.1 55.1-61.2c8.9-9.9 24-10.7 33.9-1.8zM224 96c0-17.7 14.3-32 32-32l224 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-224 0c-17.7 0-32-14.3-32-32zm0 160c0-17.7 14.3-32 32-32l224 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-224 0c-17.7 0-32-14.3-32-32zM160 416c0-17.7 14.3-32 32-32l288 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-288 0c-17.7 0-32-14.3-32-32zM48 368a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"></path></svg></span><div><h3>やることが見える</h3><p>効果が大きく、小さく始められるものから取り組みます。</p></div></li>
+    </ol>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>作って・回して・育てる</h2>
+  <p class="lead2">作って終わりにしません。現場の声を受けて、AIと一緒にすばやく直し続けます。</p>
+  <ol class="cycle"><li>現場が「欲しい・直したい」を、アプリから直接送る</li><li>AIが要望を読み、優先順位と改修計画を作る</li><li>AIが直し、試験用の環境で動作を確認する</li><li>mitomlangoが確認し、本番に反映する</li><li>現場で確かめて「対応済み」に。また次の声へ</li></ol>
+  <div class="grid g3 roles teal">
+    <div class="card teal"><span class="icon"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M96 128a128 128 0 1 0 256 0A128 128 0 1 0 96 128zm94.5 200.2l18.6 31L175.8 483.1l-36-146.9c-2-8.1-9.8-13.4-17.9-11.3C51.9 342.4 0 405.8 0 481.3c0 17 13.8 30.7 30.7 30.7l131.7 0c0 0 0 0 .1 0l5.5 0 112 0 5.5 0c0 0 0 0 .1 0l131.7 0c17 0 30.7-13.8 30.7-30.7c0-75.5-51.9-138.9-121.9-156.4c-8.1-2-15.9 3.3-17.9 11.3l-36 146.9L238.9 359.2l18.6-31c6.4-10.7-1.3-24.2-13.7-24.2L224 304l-19.7 0c-12.4 0-20.1 13.6-13.7 24.2z"></path></svg></span><div><h3>人は「何を」決める</h3><p>何に困っているか、どうなれば嬉しいかを決めるのは現場の皆さんです。</p></div></div>
+    <div class="card teal"><span class="icon"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M320 0c17.7 0 32 14.3 32 32l0 64 120 0c39.8 0 72 32.2 72 72l0 272c0 39.8-32.2 72-72 72l-304 0c-39.8 0-72-32.2-72-72l0-272c0-39.8 32.2-72 72-72l120 0 0-64c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16l32 0c8.8 0 16-7.2 16-16s-7.2-16-16-16l-32 0zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16l32 0c8.8 0 16-7.2 16-16s-7.2-16-16-16l-32 0zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16l32 0c8.8 0 16-7.2 16-16s-7.2-16-16-16l-32 0zM264 256a40 40 0 1 0 -80 0 40 40 0 1 0 80 0zm152 40a40 40 0 1 0 0-80 40 40 0 1 0 0 80zM48 224l16 0 0 192-16 0c-26.5 0-48-21.5-48-48l0-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48l0 96c0 26.5-21.5 48-48 48l-16 0 0-192 16 0z"></path></svg></span><div><h3>AIが「作る・直す」</h3><p>作り直しが速く安いので、気軽に要望を出せます。</p></div></div>
+    <div class="card teal"><span class="icon"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M256 0c4.6 0 9.2 1 13.4 2.9L457.7 82.8c22 9.3 38.4 31 38.3 57.2c-.5 99.2-41.3 280.7-213.6 363.2c-16.7 8-36.1 8-52.8 0C57.3 420.7 16.5 239.2 16 140c-.1-26.2 16.3-47.9 38.3-57.2L242.7 2.9C246.8 1 251.4 0 256 0zm0 66.8l0 378.1C394 378 431.1 230.1 432 141.4L256 66.8s0 0 0 0z"></path></svg></span><div><h3>最後は人が確認</h3><p>AIが作ったものは、本番に出す前に必ず人が確かめます。</p></div></div>
+  </div>
+</div></section>
+
+<section class="alt" id="price"><div class="wrap">
+  <h2>サービスと料金</h2>
+  <p class="lead2">すべて税抜・目安です。内容に合わせて個別にお見積りします。</p>
+  <table><thead><tr><th>サービス</th><th>内容</th><th>料金（税抜）</th></tr></thead><tbody>
+  <tr><td>初回相談</td><td>60分・オンライン。困りごとを1つにしぼります</td><td>無料</td></tr><tr class="hl"><td>お試し開発</td><td>約1か月・困りごと1つを小さく作って試します</td><td>50,000円〜</td></tr><tr><td>AI活用コンサル</td><td>業務の整理、AI活用の提案、導入計画づくり</td><td>8,000円／時間</td></tr><tr><td>月額伴走</td><td>改善サイクルを毎月一緒に回します（月10時間まで）</td><td>80,000円／月</td></tr><tr><td>ツール・アプリ開発</td><td>業務効率化ツール、社内向けWebアプリなど</td><td>小規模 150,000円〜</td></tr><tr><td>試作（PoC）</td><td>新しい仕組みを試作して効果を確かめます</td><td>300,000円〜</td></tr><tr><td>AI活用研修</td><td>基本操作・業務での活用例・社内ルールづくり</td><td>半日 50,000円〜／1日 90,000円〜</td></tr>
+  </tbody></table>
+  <p class="note">お支払い：月末締め・翌月末払い（銀行振込、振込手数料はご負担ください）</p>
+</div></section>
+
+<section><div class="wrap">
+  <h2>ご相談からお支払いまでの流れ</h2>
+  <p class="lead2">見積書・契約書・請求書をきちんとそろえ、安心して進められる形にしています。</p>
+  <ol class="flow"><li><b>お問い合わせ</b><span>フォーム・ご紹介で受け付け</span></li><li><b>無料相談</b><span>60分・オンラインで業務と困りごとをうかがう</span></li><li><b>提案・見積</b><span>進め方・期間・費用をご提案</span></li><li><b>ご契約</b><span>秘密保持契約と業務委託契約を結ぶ</span></li><li><b>実施</b><span>定例の打合せで進み具合をご報告</span></li><li><b>納品・検収</b><span>成果物をお渡しし、ご確認いただく</span></li><li><b>ご請求</b><span>月末締め・翌月末払い</span></li></ol>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <h2>安心してお任せいただくために</h2>
+  <p class="lead2">お預かりする情報を安全に扱い、契約後もシステムとデータがお客さまの手元に残るようにします。</p>
+  <div class="grid g2"><div class="card "><span class="icon"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M64 0C28.7 0 0 28.7 0 64L0 448c0 35.3 28.7 64 64 64l256 0c35.3 0 64-28.7 64-64l0-19.3c-2.7 1.1-5.4 2-8.2 2.7l-60.1 15c-3 .7-6 1.2-9 1.4c-.9 .1-1.8 .2-2.7 .2l-64 0c-6.1 0-11.6-3.4-14.3-8.8l-8.8-17.7c-1.7-3.4-5.1-5.5-8.8-5.5s-7.2 2.1-8.8 5.5l-8.8 17.7c-2.9 5.9-9.2 9.4-15.7 8.8s-12.1-5.1-13.9-11.3L144 381l-9.8 32.8c-6.1 20.3-24.8 34.2-46 34.2L80 448c-8.8 0-16-7.2-16-16s7.2-16 16-16l8.2 0c7.1 0 13.3-4.6 15.3-11.4l14.9-49.5c3.4-11.3 13.8-19.1 25.6-19.1s22.2 7.8 25.6 19.1l11.6 38.6c7.4-6.2 16.8-9.7 26.8-9.7c15.9 0 30.4 9 37.5 23.2l4.4 8.8 8.9 0c-3.1-8.8-3.7-18.4-1.4-27.8l15-60.1c2.8-11.3 8.6-21.5 16.8-29.7L384 203.6l0-43.6-128 0c-17.7 0-32-14.3-32-32L224 0 64 0zM256 0l0 128 128 0L256 0zM549.8 139.7c-15.6-15.6-40.9-15.6-56.6 0l-29.4 29.4 71 71 29.4-29.4c15.6-15.6 15.6-40.9 0-56.6l-14.4-14.4zM311.9 321c-4.1 4.1-7 9.2-8.4 14.9l-15 60.1c-1.4 5.5 .2 11.2 4.2 15.2s9.7 5.6 15.2 4.2l60.1-15c5.6-1.4 10.8-4.3 14.9-8.4L512.1 262.7l-71-71L311.9 321z"></path></svg></span><div><h3>契約前に秘密保持契約</h3><p>詳しい情報は、秘密保持契約（NDA）を結んでからお預かりします。概要だけでのご相談も可能です。</p></div></div><div class="card "><span class="icon"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M144 144l0 48 160 0 0-48c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192l0-48C80 64.5 144.5 0 224 0s144 64.5 144 144l0 48 16 0c35.3 0 64 28.7 64 64l0 192c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 256c0-35.3 28.7-64 64-64l16 0z"></path></svg></span><div><h3>学習に使われない設定のAIだけを利用</h3><p>入力内容がAIの学習に使われない設定・契約のサービスだけを使います。AIに入れない情報をご指定いただくこともできます。</p></div></div><div class="card "><span class="icon"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 384 512" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M48 0C21.5 0 0 21.5 0 48L0 464c0 26.5 21.5 48 48 48l96 0 0-80c0-26.5 21.5-48 48-48s48 21.5 48 48l0 80 96 0c26.5 0 48-21.5 48-48l0-416c0-26.5-21.5-48-48-48L48 0zM64 240c0-8.8 7.2-16 16-16l32 0c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32zm112-16l32 0c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32c0-8.8 7.2-16 16-16zm80 16c0-8.8 7.2-16 16-16l32 0c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32zM80 96l32 0c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32c0-8.8 7.2-16 16-16zm80 16c0-8.8 7.2-16 16-16l32 0c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32zM272 96l32 0c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32c0-8.8 7.2-16 16-16z"></path></svg></span><div><h3>本番はお客さま名義の環境に</h3><p>本番のシステムはお客さま名義のクラウドに作ってお渡しします。データも費用も、お客さまの管理下に残ります。</p></div></div><div class="card "><span class="icon"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" aria-hidden="true" focusable="false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M135.2 17.7C140.6 6.8 151.7 0 163.8 0L284.2 0c12.1 0 23.2 6.8 28.6 17.7L320 32l96 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 96C14.3 96 0 81.7 0 64S14.3 32 32 32l96 0 7.2-14.3zM32 128l384 0 0 320c0 35.3-28.7 64-64 64L96 512c-35.3 0-64-28.7-64-64l0-320zm96 64c-8.8 0-16 7.2-16 16l0 224c0 8.8 7.2 16 16 16s16-7.2 16-16l0-224c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16l0 224c0 8.8 7.2 16 16 16s16-7.2 16-16l0-224c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16l0 224c0 8.8 7.2 16 16 16s16-7.2 16-16l0-224c0-8.8-7.2-16-16-16z"></path></svg></span><div><h3>終了時に返却・削除</h3><p>契約が終わったら、お預かりしたデータをご指示どおり返却または削除し、ご報告します。</p></div></div></div>
+</div></section>
+
+<section class="cta" id="contact"><div class="wrap">
+  <h2>まずは、困りごとを1つ聞かせてください。</h2>
+  <p>初回相談は60分・オンライン・無料です。話を聞いてみるだけでも構いません。</p>
+  <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSc8Q5MJRWNwoqRIX07MnXLYQ_ErcGJ1dc-YIIZ4Czk5FRrzvA/viewform" target="_blank" rel="noopener">無料相談を申し込む</a>
+</div></section>
+
+<section class="privacy"><div class="wrap">
+  <h3>個人情報の取り扱いについて</h3>
+  <p>お問い合わせでいただいたお名前・会社名・連絡先・ご相談内容は、ご相談への回答とご連絡のためだけに使い、ご本人の同意なく第三者に提供することはありません。法令に基づく場合を除きます。お問い合わせ内容の確認・訂正・削除をご希望の場合は、kazuomi.k@mitomlango.com までご連絡ください。</p>
+</div></section>
+
+<footer><div class="wrap">© 2026 mitomlango（ミトムランゴ）｜AIを活用した課題解決支援｜kazuomi.k@mitomlango.com</div></footer>
+</body>
+</html>
