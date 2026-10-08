@@ -1,0 +1,7 @@
+# Claude Code / tool settings (not published)
+CLAUDE.md
+.claude/
+.mcp.json
+.impeccable/
+# design drafts (local only)
+drafts/
