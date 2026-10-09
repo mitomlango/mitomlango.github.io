@@ -179,6 +179,9 @@ footer{padding:48px var(--gut) 40px;display:grid;grid-template-columns:repeat(12
 .hero::after{z-index:-2}
 .hero-photo{position:absolute;right:0;bottom:0;width:38%;height:40%;object-fit:cover;object-position:60% 50%;z-index:-1;display:block}
 .hero-photo~.hero-art{display:none}
+/* 「こんなことができます」: カード上部にAIで作った絵（地色のクリーム） */
+.services .cards li{padding-top:0;overflow:hidden}
+.can-img{display:block;width:calc(100% + 44px);max-width:none;height:auto;aspect-ratio:4/3;object-fit:cover;margin:0 -22px 4px}
 .band{margin:0;height:clamp(180px,22vw,320px);overflow:hidden;border-top:3px solid var(--accent)}
 .band img{width:100%;height:100%;object-fit:cover;display:block}
 /* コンパクト版: 章見出しは横書きで上に置く（縦書きはトップと最後の呼びかけだけ） */
@@ -221,6 +224,7 @@ footer{padding:48px var(--gut) 40px;display:grid;grid-template-columns:repeat(12
   .cards,.cards.four{grid-template-columns:1fr 1fr;gap:12px}
   .cards li{padding:18px 16px}
   .cards h3{font-size:16px;margin-top:10px}
+  .can-img{width:calc(100% + 32px);margin:0 -16px 2px;aspect-ratio:16/11}
   .cards.three{grid-template-columns:1fr}
   .cards.three li{display:grid;grid-template-columns:44px 1fr;column-gap:16px}
   .cards.three .ico{grid-row:span 2}
@@ -331,12 +335,12 @@ h1,h2,h3,.statement,.lead2,.sub,.cta-link,.l2{word-break:auto-phrase}
 <section class="sec services">
   <div class="sec-head"><h2>こんなことができます</h2></div>
   <ul class="cards">
-    <li><svg class="ico"><use href="#i-camera"/></svg><h3>写真でデータ化</h3><p>手書きの帳票を撮るだけで表に</p></li>
-    <li><svg class="ico"><use href="#i-tablet"/></svg><h3>かんたん入力アプリ</h3><p>紙の記録をスマホ・タブレットに</p></li>
-    <li><svg class="ico"><use href="#i-invoice"/></svg><h3>請求書づくりの自動化</h3><p>作成からPDFのメール送付まで</p></li>
-    <li><svg class="ico"><use href="#i-video"/></svg><h3>動画マニュアル</h3><p>新人も字を読まずに分かる</p></li>
-    <li><svg class="ico"><use href="#i-bot"/></svg><h3>社内の質問にAIが回答</h3><p>マニュアルを覚えたAIがすぐ答える</p></li>
-    <li><svg class="ico"><use href="#i-lecture"/></svg><h3>AI活用研修</h3><p>基本から社内ルールづくりまで</p></li>
+    <li><img class="can-img" src="img/can-photo.webp" alt="スマホで帳票を撮ると表になる絵" width="800" height="597" loading="lazy"><h3>写真でデータ化</h3><p>手書きの帳票を撮るだけで表に</p></li>
+    <li><img class="can-img" src="img/can-app.webp" alt="タブレットの入力画面とクリップボードの絵" width="800" height="597" loading="lazy"><h3>かんたん入力アプリ</h3><p>紙の記録をスマホ・タブレットに</p></li>
+    <li><img class="can-img" src="img/can-invoice.webp" alt="表から請求書を作り封筒で送る絵" width="800" height="597" loading="lazy"><h3>請求書づくりの自動化</h3><p>作成からPDFのメール送付まで</p></li>
+    <li><img class="can-img" src="img/can-video.webp" alt="作業の手元を映す動画の絵" width="800" height="597" loading="lazy"><h3>動画マニュアル</h3><p>新人も字を読まずに分かる</p></li>
+    <li><img class="can-img" src="img/can-qa.webp" alt="マニュアルの横でAIが答える絵" width="800" height="597" loading="lazy"><h3>社内の質問にAIが回答</h3><p>マニュアルを覚えたAIがすぐ答える</p></li>
+    <li><img class="can-img" src="img/can-training.webp" alt="研修の様子を後ろから見た絵" width="800" height="597" loading="lazy"><h3>AI活用研修</h3><p>基本から社内ルールづくりまで</p></li>
   </ul>
 </section>
 
