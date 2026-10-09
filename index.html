@@ -168,6 +168,61 @@ footer{padding:48px var(--gut) 40px;display:grid;grid-template-columns:repeat(12
   footer{display:block}
 }
 
+/* 線画の絵: 線は主色、ひと筆だけ差し色（.a） */
+.ico{width:44px;height:44px;fill:none;stroke:var(--main);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;display:block}
+.ico .a{stroke:var(--accent)}
+.ico.big{width:84px;height:84px;stroke-width:1.4}
+.hero-art{position:absolute;right:calc(var(--gut) + 4%);bottom:72px;width:min(26vw,340px);height:auto;aspect-ratio:240/200;stroke-width:2.2}
+@media (prefers-reduced-motion:no-preference){.hero-art{opacity:0;animation:rise .9s 1.3s cubic-bezier(.2,.7,.2,1) forwards}}
+/* コンパクト版: 章見出しは横書きで上に置く（縦書きはトップと最後の呼びかけだけ） */
+.sec{display:block;padding:clamp(56px,7vw,96px) var(--gut)}
+.sec>*{max-width:1120px;margin-left:auto;margin-right:auto}
+.sec-head h2{writing-mode:horizontal-tb;position:static;max-height:none;letter-spacing:.04em;padding:0 0 0 16px;margin:0 auto 32px;max-width:1120px;width:100%;font-size:clamp(24px,2.4vw,32px)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.cards.four{grid-template-columns:repeat(4,1fr)}
+.cards li{background:var(--base);padding:24px 22px 22px}
+.sec:nth-of-type(even) .cards li{background:var(--tint)}
+.cards h3{font-size:18px;margin:14px 0 4px;color:var(--main);word-break:auto-phrase}
+.cards p{margin:0;font-size:14px;line-height:1.75;color:var(--sub);word-break:auto-phrase}
+.vs{display:grid;grid-template-columns:1fr auto 1fr;align-items:stretch;gap:20px}
+.vs>div{padding:28px 30px}
+.vs .before{background:var(--base);color:var(--muted)}
+.vs .before .ico{stroke:var(--muted)}
+.vs .after{background:var(--main);color:var(--base)}
+.vs .after .ico{stroke:var(--base)}
+.vs .after .ico .a{stroke:var(--accent)}
+.vs h3{font-size:20px;margin:14px 0 6px}
+.vs p{margin:0;font-size:15px}
+.vs .arrow{align-self:center;font-family:var(--serif);font-size:36px;color:var(--accent-text)}
+.statement{margin-top:40px}
+.flow{grid-template-columns:repeat(5,1fr);position:relative}
+.flow li{border-top:0;padding-top:0;position:relative}
+.flow li::before{width:48px;height:48px;border-radius:50%;border:1.7px solid var(--main);background:var(--base);display:flex!important;align-items:center;justify-content:center;font-size:22px;position:relative;z-index:1}
+.flow li:first-child::before{border-color:var(--accent)}
+.flow li:not(:last-child)::after{content:"";position:absolute;top:24px;left:48px;right:-14px;border-top:1.7px dashed var(--line)}
+@media (max-width:900px){
+  .hero-art{position:static;grid-column:1/-1;grid-row:4;width:140px;margin:24px 0 0 auto}
+  .price tr{display:grid;grid-template-columns:1fr auto;column-gap:12px;padding:12px 0}
+  .price tr.hl{padding:12px 12px 12px 14px}
+  .price td:first-child{font-size:16px}
+  .price td:nth-child(2){grid-column:1/-1;grid-row:2;font-size:13px}
+  .price td:last-child{grid-column:2;grid-row:1;width:auto;text-align:right!important}
+  .cards,.cards.four{grid-template-columns:1fr 1fr;gap:12px}
+  .cards li{padding:18px 16px}
+  .cards h3{font-size:16px;margin-top:10px}
+  .cards.three{grid-template-columns:1fr}
+  .cards.three li{display:grid;grid-template-columns:44px 1fr;column-gap:16px}
+  .cards.three .ico{grid-row:span 2}
+  .cards.three h3{margin-top:0}
+  .vs{grid-template-columns:1fr;gap:8px}
+  .vs .arrow{transform:rotate(90deg);justify-self:center;font-size:28px}
+  .flow{grid-template-columns:1fr;gap:0}
+  .flow li{display:grid;grid-template-columns:48px 1fr;column-gap:16px;padding-bottom:18px}
+  .flow li::before{grid-row:span 2}
+  .flow b{margin:2px 0 0}
+  .flow li:not(:last-child)::after{top:48px;left:24px;right:auto;bottom:0;border-top:0;border-left:1.7px dashed var(--line)}
+}
+
 /* 改行を文節単位にして、行末に1文字だけ残るのを防ぐ */
 h1,h2,h3,.statement,.lead2,.sub,.cta-link,.l2{word-break:auto-phrase}
 .statement,.lead2{text-wrap:balance}
@@ -181,121 +236,120 @@ h1,h2,h3,.statement,.lead2,.sub,.cta-link,.l2{word-break:auto-phrase}
 </header>
 
 <main>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<symbol id="i-paper" viewBox="0 0 48 48"><rect x="11" y="6" width="26" height="36" rx="2"/><path d="M17 15h14M17 21h14M17 27h8"/><path class="a" d="M27 37l9-9 3 3-9 9h-3z"/></symbol>
+<symbol id="i-retype" viewBox="0 0 48 48"><rect x="4" y="10" width="17" height="22" rx="2"/><rect x="27" y="10" width="17" height="22" rx="2"/><path d="M8 17h9M8 22h9M31 17h9M31 22h9"/><path class="a" d="M14 38h20m-4-4 4 4-4 4M34 4H14m4-4-4 4 4 4"/></symbol>
+<symbol id="i-files" viewBox="0 0 48 48"><path d="M6 14h12l3 4h21v20a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2z"/><path d="M10 10h10l3 4M14 6h8l3 4"/><path class="a" d="M24 27a4 4 0 1 0 0 .1M27 30l4 4"/></symbol>
+<symbol id="i-craft" viewBox="0 0 48 48"><circle cx="17" cy="13" r="5"/><path d="M8 40v-9a9 9 0 0 1 18 0v9"/><path class="a" d="M31 19h11M31 25h8M31 31h5"/><path d="M28 13h2" stroke-dasharray="1 4"/></symbol>
+<symbol id="i-people" viewBox="0 0 48 48"><circle cx="14" cy="15" r="5"/><path d="M5 38v-6a9 9 0 0 1 18 0v6"/><circle cx="32" cy="15" r="5" stroke-dasharray="3 3"/><path d="M25 32a9 9 0 0 1 16 0v6" stroke-dasharray="3 3"/><path class="a" d="M36 4h8"/></symbol>
+<symbol id="i-teach" viewBox="0 0 48 48"><circle cx="13" cy="16" r="5"/><path d="M5 40v-7a8 8 0 0 1 16 0v7"/><path class="a" d="M25 8h18v14H31l-5 4v-4h-1z"/><circle cx="35" cy="33" r="4"/><path d="M29 42a6 6 0 0 1 12 0"/></symbol>
+<symbol id="i-big" viewBox="0 0 48 48"><rect x="8" y="8" width="32" height="32" rx="2"/><path d="M8 18h32M18 18v22M8 29h32"/><path class="a" d="M2 44h44"/></symbol>
+<symbol id="i-small" viewBox="0 0 48 48"><rect x="6" y="30" width="10" height="10" rx="1.5"/><rect x="19" y="30" width="10" height="10" rx="1.5"/><rect class="a" x="19" y="17" width="10" height="10" rx="1.5"/><path d="M38 40V24"/><path class="a" d="M38 28c0-6 4-9 8-9 0 6-4 9-8 9zM38 32c0-5-3-7-6-7 0 5 3 7 6 7z"/><path d="M2 44h44"/></symbol>
+<symbol id="i-seed" viewBox="0 0 48 48"><path d="M10 40h28"/><path d="M24 40V22"/><path class="a" d="M24 26c0-8 6-12 13-12 0 8-6 12-13 12zM24 30c0-6-5-9-10-9 0 6 5 9 10 9z"/></symbol>
+<symbol id="i-voice" viewBox="0 0 48 48"><rect x="17" y="6" width="14" height="22" rx="7"/><path d="M11 22a13 13 0 0 0 26 0M24 35v7M17 42h14"/><path class="a" d="M4 18v8M42 15v14M46 19v6M8 14v16"/></symbol>
+<symbol id="i-cycle" viewBox="0 0 48 48"><path d="M39 20A16 16 0 0 0 10 15"/><path d="M9 28a16 16 0 0 0 29 5"/><path class="a" d="M10 7v8h8M38 41v-8h-8"/><circle class="a" cx="24" cy="24" r="4"/></symbol>
+<symbol id="i-camera" viewBox="0 0 48 48"><path d="M5 15h9l3-5h14l3 5h9v23H5z"/><circle cx="24" cy="26" r="7"/><path class="a" d="M36 20h3"/></symbol>
+<symbol id="i-tablet" viewBox="0 0 48 48"><rect x="10" y="4" width="28" height="40" rx="3"/><path d="M22 39h4"/><path class="a" d="M16 13h3l2 2 4-4M16 22h3l2 2 4-4M29 13h4M29 22h4"/></symbol>
+<symbol id="i-invoice" viewBox="0 0 48 48"><path d="M10 4h20l8 8v32H10z"/><path d="M30 4v8h8M16 20h16M16 26h16M16 32h8"/><path class="a" d="M28 38l4 4 10-10"/></symbol>
+<symbol id="i-video" viewBox="0 0 48 48"><rect x="4" y="10" width="40" height="28" rx="3"/><path class="a" d="M20 18v12l10-6z"/><path d="M4 32h40"/></symbol>
+<symbol id="i-bot" viewBox="0 0 48 48"><rect x="8" y="14" width="32" height="24" rx="5"/><path d="M24 14V8"/><circle cx="24" cy="6" r="2"/><circle class="a" cx="17" cy="25" r="2.5"/><circle class="a" cx="31" cy="25" r="2.5"/><path d="M18 32h12M4 22v8M44 22v8"/></symbol>
+<symbol id="i-lecture" viewBox="0 0 48 48"><rect x="16" y="5" width="28" height="19" rx="2"/><path class="a" d="M21 18l5-5 4 3 8-7"/><circle cx="10" cy="18" r="4"/><path d="M3 42V31a7 7 0 0 1 14 0v11M17 28l8-6"/></symbol>
+<symbol id="i-lock" viewBox="0 0 48 48"><rect x="10" y="20" width="28" height="22" rx="3"/><path d="M16 20v-6a8 8 0 0 1 16 0v6"/><path class="a" d="M24 29v5"/></symbol>
+<symbol id="i-shield" viewBox="0 0 48 48"><path d="M24 4l16 6v12c0 10-7 18-16 22C15 40 8 32 8 22V10z"/><path class="a" d="M17 24l5 5 9-10"/></symbol>
+<symbol id="i-home" viewBox="0 0 48 48"><path d="M6 22L24 7l18 15"/><path d="M11 18v22h26V18"/><path class="a" d="M20 40V29h8v11"/></symbol>
+<symbol id="i-return" viewBox="0 0 48 48"><path d="M8 14h24a10 10 0 0 1 0 20H14"/><path class="a" d="M14 8l-6 6 6 6"/><path d="M14 34l-4 0"/></symbol>
+<symbol id="i-hero" viewBox="0 0 240 200"><path d="M10 190h220"/><rect x="40" y="150" width="40" height="40" rx="3"/><rect x="86" y="150" width="40" height="40" rx="3"/><rect class="a" x="63" y="104" width="40" height="40" rx="3"/><path d="M172 190v-86"/><path class="a" d="M172 128c0-26 18-40 44-40 0 26-18 40-44 40zM172 150c0-20-14-31-34-31 0 20 14 31 34 31z"/><path d="M172 104c0-14 8-24 20-28" stroke-dasharray="3 6"/></symbol>
+</defs></svg>
+
 <section class="hero">
   <h1><span class="l1">AIで、あなたの会社だけの仕組みを</span><span class="l2">小さく作って、育てる。</span></h1>
   <div class="hero-body">
     <p class="sub">AIを活用した課題解決支援（ご相談・開発・研修）</p>
-    <p class="lead">紙・手入力・職人技。大きなシステムを入れるほどではないけれど、毎日の手間は確実にある。そんな中小企業の現場に、AIで「自社専用の仕組み」を小さく作り、使いながら育てていきます。</p>
+    <p class="lead">大きなシステムを入れるほどではない、毎日の手間。AIで「自社専用の仕組み」を小さく作り、使いながら育てます。</p>
     <a class="cta-link" href="https://docs.google.com/forms/d/e/1FAIpQLSc8Q5MJRWNwoqRIX07MnXLYQ_ErcGJ1dc-YIIZ4Czk5FRrzvA/viewform" target="_blank" rel="noopener">無料相談を申し込む（60分・オンライン）</a>
   </div>
-  
+  <svg class="hero-art ico" aria-hidden="true"><use href="#i-hero"/></svg>
 </section>
 
 <section class="sec troubles">
-  <div class="sec-head"><h2>こんなお困りごとはありませんか</h2><p class="lead2">大きなシステムを入れるほどではない。でも、毎日の手間は確実にある。</p></div>
-  <ul class="plain">
-    <li><h3>紙・手書きが中心</h3><p>記録や伝票が紙のまま。探すのも集計するのも手作業。</p></li>
-    <li><h3>同じ数字を何度も入力</h3><p>手書きの表をExcelへ、Excelを別のシステムへ転記。</p></li>
-    <li><h3>ファイルの山</h3><p>毎日の記録をファイリング。必要なときに見つからない。</p></li>
-    <li><h3>職人技が伝わらない</h3><p>「見て覚えろ」で、ベテランのコツが残らない。</p></li>
-    <li><h3>人手不足・高齢化</h3><p>人が減っても、仕事の量は変わらない。</p></li>
-    <li><h3>新人教育が重い</h3><p>短期アルバイトや外国人スタッフへの説明に時間がかかる。</p></li>
+  <div class="sec-head"><h2>こんなお困りごとはありませんか</h2></div>
+  <ul class="cards">
+    <li><svg class="ico"><use href="#i-paper"/></svg><h3>紙・手書きが中心</h3><p>探すのも集計も手作業</p></li>
+    <li><svg class="ico"><use href="#i-retype"/></svg><h3>同じ数字を何度も入力</h3><p>紙からExcel、Excelから別システムへ</p></li>
+    <li><svg class="ico"><use href="#i-files"/></svg><h3>ファイルの山</h3><p>必要なときに見つからない</p></li>
+    <li><svg class="ico"><use href="#i-craft"/></svg><h3>職人技が伝わらない</h3><p>ベテランのコツが残らない</p></li>
+    <li><svg class="ico"><use href="#i-people"/></svg><h3>人手不足・高齢化</h3><p>人は減っても仕事は減らない</p></li>
+    <li><svg class="ico"><use href="#i-teach"/></svg><h3>新人教育が重い</h3><p>説明に時間がかかる</p></li>
   </ul>
 </section>
 
 <section class="sec shift">
-  <div class="sec-head"><h2>AIで「試すコスト」が激変しました</h2><p class="lead2">これまでは、大きく作って長く使う前提。いまは、小さく作ってすぐ直せます。</p></div>
-  <div class="compare">
-    <div class="before"><h3>これまで（生成AI以前）</h3><ul>
-      <li>書類を決まった形式にそろえ直してからシステム化</li><li>システム会社に外注。数百万円・数か月</li><li>作った後の変更がしにくく、ベンダー任せ</li><li>「みんなに共通」の大きな仕組みしか割に合わない</li></ul></div>
-    <div class="after"><h3>いま（Claudeなどの生成AI）</h3><ul>
-      <li>書類はそのまま撮影。文字も表もまとめて読み取れる</li><li>AIと一緒に作るので、月数千円＋AI利用料から動かせる</li><li>現場の声を数日で反映。使いながら直せる</li><li>1社・1つの現場のための仕組みでも割に合う</li></ul></div>
+  <div class="sec-head"><h2>AIで「試すコスト」が激変しました</h2></div>
+  <div class="vs">
+    <div class="before"><svg class="ico big"><use href="#i-big"/></svg><h3>これまで</h3><p>大きく作って長く使う。<br>数百万円・数か月。変更しにくい。</p></div>
+    <div class="arrow" aria-hidden="true">→</div>
+    <div class="after"><svg class="ico big"><use href="#i-small"/></svg><h3>いま</h3><p>小さく作ってすぐ直す。<br>書類は撮影するだけ。数日で改善。</p></div>
   </div>
-  <p class="statement">一社一社に合わせた「自社専用の仕組み」を、小さく作れる時代になりました。</p>
+  <p class="statement">1社のための「自社専用の仕組み」でも、割に合う時代です。</p>
 </section>
 
 <section class="sec approach" id="approach">
-  <div class="sec-head"><h2>mitomlangoの考え方：まずは1つから</h2><p class="lead2">一気に理想の形を入れると、現場は止まります。小さな成功体験で「慣れてもらう」ことを大切にしています。</p></div>
-  <ol class="walls">
-    <li><span class="w">AIへのアレルギー（よく分からない・不安）</span><span class="s"><b>STEP 1</b>自分に直結する「これいいな」を小さく体験してもらう</span></li>
-    <li><span class="w">変わりたくない（今のやり方で困っていない）</span><span class="s"><b>STEP 2</b>成功事例を1つずつ積み上げる</span></li>
-    <li><span class="w">一気に理想形を入れると抵抗される</span><span class="s"><b>STEP 3</b>抵抗感がじわじわ薄れ、現場に浸透する</span></li>
+  <div class="sec-head"><h2>考え方：まずは1つから</h2></div>
+  <ol class="cards three">
+    <li><svg class="ico"><use href="#i-seed"/></svg><h3>小さく始める</h3><p>「これいいな」を1つ体験して、少しずつ慣れてもらいます。</p></li>
+    <li><svg class="ico"><use href="#i-voice"/></svg><h3>声を集める</h3><p>「課題は？」と聞かず、1日5分の声からAIが本当の困りごとを見つけます。</p></li>
+    <li><svg class="ico"><use href="#i-cycle"/></svg><h3>使いながら育てる</h3><p>現場の「直したい」をAIがすばやく反映。本番の前には必ず人が確かめます。</p></li>
   </ol>
-  <p class="statement">スモールスタートで、人に「慣れてもらう」。</p>
 </section>
 
 <section class="sec start" id="start">
-  <div class="sec-head"><h2>始め方：困りごとを1つ、小さく作って試す</h2><p class="lead2">効果を実感してから、次に進むかどうかを決められます。</p></div>
+  <div class="sec-head"><h2>始め方</h2></div>
   <ol class="steps">
-    <li><small>STEP 1</small><h3>無料相談</h3><p class="meta">60分・オンライン</p><p>業務の流れをうかがい、AIで変えられそうな困りごとを1つにしぼります。</p><p class="price">0円</p></li>
-    <li><small>STEP 2</small><h3>お試し開発</h3><p class="meta">約1か月・困りごと1つ</p><p>その1つを小さく作り、現場で使ってみて効果を確かめます。</p><p class="price">5万円〜</p></li>
-    <li><small>STEP 3</small><h3>本番・月額伴走</h3><p class="meta">毎月の改善を一緒に</p><p>効いたものを本番に。現場の声を受けて機能を足し、育てていきます。</p><p class="price">8万円／月〜</p></li>
+    <li><small>STEP 1</small><h3>無料相談</h3><p>60分・オンライン。困りごとを1つにしぼります。</p><p class="price">0円</p></li>
+    <li><small>STEP 2</small><h3>お試し開発</h3><p>約1か月。その1つを小さく作って試します。</p><p class="price">5万円〜</p></li>
+    <li><small>STEP 3</small><h3>本番・月額伴走</h3><p>効いたものを本番に。毎月一緒に育てます。</p><p class="price">8万円／月〜</p></li>
   </ol>
-  <p class="note">金額は税抜・目安です。お試しの範囲は無料相談で一緒に決め、お見積りします。</p>
 </section>
 
 <section class="sec services">
-  <div class="sec-head"><h2>こんなことができます</h2><p class="lead2">まずはこの中の「1つ」から。お客さまの現場に合わせて作ります。</p></div>
-  <ul class="plain">
-    <li><h3>写真でデータ化</h3><p>手書きの帳票や記録を撮るだけで読み取り、表に自動で転記します。</p></li>
-    <li><h3>かんたん入力アプリ</h3><p>紙の記録をタブレット・スマホ入力に。あとから一瞬で検索できます。</p></li>
-    <li><h3>請求書づくりの自動化</h3><p>スプレッドシートから請求書を作り、PDFでメール送付まで。</p></li>
-    <li><h3>動画マニュアル</h3><p>作業を短い動画に。新人や短期スタッフも、字を読まずに分かります。</p></li>
-    <li><h3>社内の質問にAIが回答</h3><p>マニュアルや規程をAIに覚えさせ、聞けばすぐ答えが返ります。</p></li>
-    <li><h3>AI活用研修</h3><p>生成AIの基本から業務での使い方、社内ルールづくりまで。</p></li>
-  </ul>
-</section>
-
-<section class="sec voice">
-  <div class="sec-head"><h2>「課題は？」と聞かずに、声を集める</h2><p class="lead2">何を作るかの前に、聞き方を変えます。本当に効くテーマは、日々の声の中にあります。</p></div>
-  <div class="voice-body">
-    <div class="why"><h3>「課題はありますか？」では出てこない理由</h3><ul>
-      <li>今のやり方で、うまくできているという自負がある</li><li>自動化で仕事を奪われるのではという不安がある</li><li>何を答えればいいか分からない</li></ul></div>
-    <ol class="seq">
-      <li><h3>1日5分、声で残す</h3><p>「困ったこと・良かったこと」をスマホに話すだけ。</p></li>
-      <li><h3>文字に起こす</h3><p>AIが自動で文字にします。</p></li>
-      <li><h3>AIが分析する</h3><p>たくさんの声から、くり返し出てくるテーマを見つけます。</p></li>
-      <li><h3>やることが見える</h3><p>効果が大きく、小さく始められるものから取り組みます。</p></li>
-    </ol>
-  </div>
-</section>
-
-<section class="sec grow">
-  <div class="sec-head"><h2>作って・回して・育てる</h2><p class="lead2">作って終わりにしません。現場の声を受けて、AIと一緒にすばやく直し続けます。</p></div>
-  <ol class="cycle"><li>現場が「欲しい・直したい」を、アプリから直接送る</li><li>AIが要望を読み、優先順位と改修計画を作る</li><li>AIが直し、試験用の環境で動作を確認する</li><li>mitomlangoが確認し、本番に反映する</li><li>現場で確かめて「対応済み」に。また次の声へ</li></ol>
-  <ul class="roles">
-    <li><h3>人は「何を」決める</h3><p>何に困っているか、どうなれば嬉しいかを決めるのは現場の皆さんです。</p></li>
-    <li><h3>AIが「作る・直す」</h3><p>作り直しが速く安いので、気軽に要望を出せます。</p></li>
-    <li><h3>最後は人が確認</h3><p>AIが作ったものは、本番に出す前に必ず人が確かめます。</p></li>
+  <div class="sec-head"><h2>こんなことができます</h2></div>
+  <ul class="cards">
+    <li><svg class="ico"><use href="#i-camera"/></svg><h3>写真でデータ化</h3><p>手書きの帳票を撮るだけで表に</p></li>
+    <li><svg class="ico"><use href="#i-tablet"/></svg><h3>かんたん入力アプリ</h3><p>紙の記録をスマホ・タブレットに</p></li>
+    <li><svg class="ico"><use href="#i-invoice"/></svg><h3>請求書づくりの自動化</h3><p>作成からPDFのメール送付まで</p></li>
+    <li><svg class="ico"><use href="#i-video"/></svg><h3>動画マニュアル</h3><p>新人も字を読まずに分かる</p></li>
+    <li><svg class="ico"><use href="#i-bot"/></svg><h3>社内の質問にAIが回答</h3><p>マニュアルを覚えたAIがすぐ答える</p></li>
+    <li><svg class="ico"><use href="#i-lecture"/></svg><h3>AI活用研修</h3><p>基本から社内ルールづくりまで</p></li>
   </ul>
 </section>
 
 <section class="sec price" id="price">
-  <div class="sec-head"><h2>サービスと料金</h2><p class="lead2">すべて税抜・目安です。内容に合わせて個別にお見積りします。</p></div>
+  <div class="sec-head"><h2>料金</h2></div>
   <table><thead><tr><th>サービス</th><th>内容</th><th>料金（税抜）</th></tr></thead><tbody>
-  <tr><td>初回相談</td><td>60分・オンライン。困りごとを1つにしぼります</td><td>無料</td></tr>
-  <tr class="hl"><td>お試し開発</td><td>約1か月・困りごと1つを小さく作って試します</td><td>50,000円〜</td></tr>
-  <tr><td>AI活用コンサル</td><td>業務の整理、AI活用の提案、導入計画づくり</td><td>8,000円／時間</td></tr>
-  <tr><td>月額伴走</td><td>改善サイクルを毎月一緒に回します（月10時間まで）</td><td>80,000円／月</td></tr>
-  <tr><td>ツール・アプリ開発</td><td>業務効率化ツール、社内向けWebアプリなど</td><td>小規模 150,000円〜</td></tr>
-  <tr><td>試作（PoC）</td><td>新しい仕組みを試作して効果を確かめます</td><td>300,000円〜</td></tr>
-  <tr><td>AI活用研修</td><td>基本操作・業務での活用例・社内ルールづくり</td><td>半日 50,000円〜／1日 90,000円〜</td></tr>
+  <tr><td>初回相談</td><td>60分・オンライン</td><td>無料</td></tr>
+  <tr class="hl"><td>お試し開発</td><td>約1か月・困りごと1つ</td><td>50,000円〜</td></tr>
+  <tr><td>AI活用コンサル</td><td>業務の整理・導入計画</td><td>8,000円／時間</td></tr>
+  <tr><td>月額伴走</td><td>月10時間まで</td><td>80,000円／月</td></tr>
+  <tr><td>ツール・アプリ開発</td><td>業務ツール・社内Webアプリ</td><td>150,000円〜</td></tr>
+  <tr><td>試作（PoC）</td><td>新しい仕組みの効果検証</td><td>300,000円〜</td></tr>
+  <tr><td>AI活用研修</td><td>半日／1日</td><td>50,000円〜／90,000円〜</td></tr>
   </tbody></table>
-  <p class="note">お支払い：月末締め・翌月末払い（銀行振込、振込手数料はご負担ください）</p>
+  <p class="note">金額は目安です。内容に合わせてお見積りします。お支払いは月末締め・翌月末払い（銀行振込、振込手数料はご負担ください）。</p>
 </section>
 
 <section class="sec flowsec">
-  <div class="sec-head"><h2>ご相談からお支払いまでの流れ</h2><p class="lead2">見積書・契約書・請求書をきちんとそろえ、安心して進められる形にしています。</p></div>
-  <ol class="flow"><li><b>お問い合わせ</b><span>フォーム・ご紹介で受け付け</span></li><li><b>無料相談</b><span>60分・オンラインで業務と困りごとをうかがう</span></li><li><b>提案・見積</b><span>進め方・期間・費用をご提案</span></li><li><b>ご契約</b><span>秘密保持契約と業務委託契約を結ぶ</span></li><li><b>実施</b><span>定例の打合せで進み具合をご報告</span></li><li><b>納品・検収</b><span>成果物をお渡しし、ご確認いただく</span></li><li><b>ご請求</b><span>月末締め・翌月末払い</span></li></ol>
+  <div class="sec-head"><h2>ご相談からの流れ</h2></div>
+  <ol class="flow"><li><b>お問い合わせ</b><span>フォームから</span></li><li><b>無料相談</b><span>60分・オンライン</span></li><li><b>提案・見積</b><span>進め方と費用</span></li><li><b>ご契約・実施</b><span>秘密保持契約のうえで</span></li><li><b>納品・ご請求</b><span>確認後、月末締め</span></li></ol>
 </section>
 
 <section class="sec trust">
-  <div class="sec-head"><h2>安心してお任せいただくために</h2><p class="lead2">お預かりする情報を安全に扱い、契約後もシステムとデータがお客さまの手元に残るようにします。</p></div>
-  <ul class="plain">
-    <li><h3>契約前に秘密保持契約</h3><p>詳しい情報は、秘密保持契約（NDA）を結んでからお預かりします。概要だけでのご相談も可能です。</p></li>
-    <li><h3>学習に使われない設定のAIだけを利用</h3><p>入力内容がAIの学習に使われない設定・契約のサービスだけを使います。AIに入れない情報をご指定いただくこともできます。</p></li>
-    <li><h3>本番はお客さま名義の環境に</h3><p>本番のシステムはお客さま名義のクラウドに作ってお渡しします。データも費用も、お客さまの管理下に残ります。</p></li>
-    <li><h3>終了時に返却・削除</h3><p>契約が終わったら、お預かりしたデータをご指示どおり返却または削除し、ご報告します。</p></li>
+  <div class="sec-head"><h2>安心してお任せいただくために</h2></div>
+  <ul class="cards four">
+    <li><svg class="ico"><use href="#i-lock"/></svg><h3>契約前に秘密保持契約</h3><p>概要だけのご相談もできます</p></li>
+    <li><svg class="ico"><use href="#i-shield"/></svg><h3>学習に使われないAIだけ</h3><p>入れない情報も指定できます</p></li>
+    <li><svg class="ico"><use href="#i-home"/></svg><h3>本番はお客さま名義に</h3><p>データも費用も手元に残ります</p></li>
+    <li><svg class="ico"><use href="#i-return"/></svg><h3>終了時に返却・削除</h3><p>ご指示どおりに対応し報告します</p></li>
   </ul>
 </section>
 
@@ -304,6 +358,7 @@ h1,h2,h3,.statement,.lead2,.sub,.cta-link,.l2{word-break:auto-phrase}
   <p>初回相談は60分・オンライン・無料です。話を聞いてみるだけでも構いません。</p>
   <a class="cta-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSc8Q5MJRWNwoqRIX07MnXLYQ_ErcGJ1dc-YIIZ4Czk5FRrzvA/viewform" target="_blank" rel="noopener">無料相談を申し込む</a>
 </section>
+
 </main>
 
 <footer>
