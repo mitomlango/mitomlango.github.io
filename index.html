@@ -174,6 +174,13 @@ footer{padding:48px var(--gut) 40px;display:grid;grid-template-columns:repeat(12
 .ico.big{width:84px;height:84px;stroke-width:1.4}
 .hero-art{position:absolute;right:calc(var(--gut) + 4%);bottom:72px;width:min(26vw,340px);height:auto;aspect-ratio:240/200;stroke-width:2.2}
 @media (prefers-reduced-motion:no-preference){.hero-art{opacity:0;animation:rise .9s 1.3s cubic-bezier(.2,.7,.2,1) forwards}}
+/* 写真: 主色と地色の2色に調色済み（img/）。トップは右の色面の上部に、章の間は横長の帯で */
+.hero{isolation:isolate}
+.hero::after{z-index:-2}
+.hero-photo{position:absolute;right:0;bottom:0;width:38%;height:40%;object-fit:cover;object-position:60% 50%;z-index:-1;display:block}
+.hero-photo~.hero-art{display:none}
+.band{margin:0;height:clamp(180px,22vw,320px);overflow:hidden;border-top:3px solid var(--accent)}
+.band img{width:100%;height:100%;object-fit:cover;display:block}
 /* コンパクト版: 章見出しは横書きで上に置く（縦書きはトップと最後の呼びかけだけ） */
 .sec{display:block;padding:clamp(56px,7vw,96px) var(--gut)}
 .sec>*{max-width:1120px;margin-left:auto;margin-right:auto}
@@ -202,6 +209,10 @@ footer{padding:48px var(--gut) 40px;display:grid;grid-template-columns:repeat(12
 .flow li:not(:last-child)::after{content:"";position:absolute;top:24px;left:48px;right:-14px;border-top:1.7px dashed var(--line)}
 @media (max-width:900px){
   .hero-art{position:static;grid-column:1/-1;grid-row:4;width:140px;margin:24px 0 0 auto}
+  /* スマホは直後に写真の帯が続くので、トップは線画の絵だけにする */
+  .hero-photo{display:none}
+  .hero-photo~.hero-art{display:block}
+  .band{height:160px}
   .price tr{display:grid;grid-template-columns:1fr auto;column-gap:12px;padding:12px 0}
   .price tr.hl{padding:12px 12px 12px 14px}
   .price td:first-child{font-size:16px}
@@ -269,8 +280,11 @@ h1,h2,h3,.statement,.lead2,.sub,.cta-link,.l2{word-break:auto-phrase}
     <p class="lead">大きなシステムを入れるほどではない、毎日の手間。AIで「自社専用の仕組み」を小さく作り、使いながら育てます。</p>
     <a class="cta-link" href="https://docs.google.com/forms/d/e/1FAIpQLSc8Q5MJRWNwoqRIX07MnXLYQ_ErcGJ1dc-YIIZ4Czk5FRrzvA/viewform" target="_blank" rel="noopener">無料相談を申し込む（60分・オンライン）</a>
   </div>
+  <img class="hero-photo" src="img/hero-desk.webp" alt="キーボードの横で書類に手書きする手元" width="1600" height="898" fetchpriority="high">
   <svg class="hero-art ico" aria-hidden="true"><use href="#i-hero"/></svg>
 </section>
+
+<figure class="band"><img src="img/band-papers.webp" alt="付せんだらけの書類の束" width="1600" height="1067" loading="lazy"></figure>
 
 <section class="sec troubles">
   <div class="sec-head"><h2>こんなお困りごとはありませんか</h2></div>
@@ -302,6 +316,8 @@ h1,h2,h3,.statement,.lead2,.sub,.cta-link,.l2{word-break:auto-phrase}
     <li><svg class="ico"><use href="#i-cycle"/></svg><h3>使いながら育てる</h3><p>現場の「直したい」をAIがすばやく反映。本番の前には必ず人が確かめます。</p></li>
   </ol>
 </section>
+
+<figure class="band"><img src="img/band-sketch.webp" alt="ノートに画面のラフを描く手元" width="1600" height="1067" loading="lazy"></figure>
 
 <section class="sec start" id="start">
   <div class="sec-head"><h2>始め方</h2></div>
